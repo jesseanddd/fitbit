@@ -36,7 +36,7 @@ from env import path
 def get_fitbit(files):
     chunks = []
     for i, element in enumerate(files):
-        i = pd.read_csv(path+element, skiprows = 35, nrows=33, engine = 'c', low_memory=False) # TODO: Check if ok low_memory
+        i = pd.read_csv(path+element, skiprows = 35, nrows=33, engine = 'c', low_memory=False)
         chunks.append(i)
     return chunks
 
@@ -81,15 +81,17 @@ def missing_values_col(df):
                          'num_empty': empty_count, 'empty_percentage': empty_percentage,
                          'nan_count': nan_count, 'nan_percentage': nan_percentage})
 
-def convert_to_float(df, *cols):  # TODO: Check to see if ok
+def convert_to_float(df, *cols):
     """
     takes in a dataframe and a list of columns names and returns the dataframe
     with the datatypes of those columns changed to a non-numeric type
     """
     for col in cols:
         df[col] = df[col].str.replace(',', '')
+        df[col] = df[col].str.replace(' ', '')
         df[col] = df[col].astype(float)
     return df
+
 
 
 
@@ -146,6 +148,7 @@ def plot_hist(df, num_bins=8):
     Plots the distribution of the dataframe's variables.
     """
     df.hist(figsize=(24, 20), bins=num_bins)
+    plt.axes
 
 
 def plot_heat(df):
