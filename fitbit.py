@@ -18,14 +18,24 @@ Codeup, Ada Cohort
 import os
 import sys
 
-import matplotlib.pyplot as plt
-from matplotlib import cm
-import seaborn as sns
-
 import pandas as pd
 import numpy as np
 
 from env import path
+
+from datetime import datetime
+import itertools as it
+
+# data visualization 
+import matplotlib
+import matplotlib.pyplot as plt
+import statsmodels.api as sm
+import seaborn as sns
+
+# ignore warnings
+import warnings
+warnings.filterwarnings("ignore")
+
 
 
 # ===========
@@ -172,6 +182,9 @@ def set_utc(df, locale):
     Converts to UTC time.
     """
     return df.tz_localize('utc').tz_convert(None)
+
+
+
 
 
 # ==================================================
