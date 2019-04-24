@@ -185,6 +185,19 @@ def set_utc(df, locale):
 
 
 
+# ========
+# MODELING
+# ========
+
+def input_missing_row(df):
+    missing = {'Date': '7/28/18', 'Calories Burned': 3358, 'Steps': 8073, 'Distance': 3.81, 'Floors': 5.0, 'Minutes Sedentary': 674.0, 'Minutes Lightly Active': 236.0, 'Minutes Fairly Active': 19.0, 'Minutes Very Active': 9.0, 'Activity Calories': 1481}
+    df = df.append(missing, ignore_index=True)
+    df.Date = pd.to_datetime(df.Date)
+    df = df.sort_values(by='Date')
+    return df
+
+
+
 
 
 # ==================================================
