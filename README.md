@@ -1,4 +1,4 @@
-_Time-Series Project._
+_Time-Series Analysis Project._
 
 --
 
@@ -12,6 +12,9 @@ _Time-Series Project._
 
 [Link to the slide here.](https://docs.google.com/presentation/d/1N1U6WgSY_t4lm101RKwYDcDck6k6rJ37OmI56Vr6ZM4)
 
+## 2-week Forecast
+
+[Link to the predicted-fitbit.csv here.](https://github.com/jesseanddd/fitbit/blob/master/predicted_fitbit.csv)
 
 ## Usage
 
